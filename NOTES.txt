@@ -1,0 +1,81 @@
+
+
+Further improvements
+https://www.udemy.com/the-web-developer-bootcamp/learn/v4/questions/2078848
+
+- UI Improvements (login and signup, nav-bar, registration flash message) - http://slides.com/nax3t/yelpcamp-refactor-ui
+
+- Pricing feature - http://slides.com/nax3t/yelpcamp-refactor-pricing
+
+- Google Maps location - http://slides.com/nax3t/yelpcamp-refactor-google-maps
+
+- Time since created w/ Moment JS - http://slides.com/nax3t/yelpcamp-refactor-moment
+
+- Admin role (user roles) - https://www.youtube.com/watch?v=somc45pnM2k
+
+- User profile - https://youtu.be/6ar77jZ_ajc
+
+- Password reset - https://youtu.be/UV9FvlTySGg
+
+- Fuzzy Search - https://youtu.be/9_lKMTXVk64
+
+- Image upload - https://youtu.be/RHd4rP9U9SA
+
+
+The rel attribute defines the relationship that the linked resource has 
+to the document from which it's referenced. 
+In most cases, this resource will simply be "stylesheet", 
+which means, not surprisingly, "the referenced document is a stylesheet."
+
+The value "text/css" indicates that the content is CSS
+
+https://fonts.google.com
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+
+It's the alphanumeric combination that comes after ?photo=
+Once you copy the photo's ID then you can add it to the source.unsplash address like so: 
+<img src="https://source.unsplash.com/cPF2nlWcMY4">
+
+Beautiful, free photos.
+https://unsplash.com/
+
+The iconic font and CSS toolkit
+http://fontawesome.io/
+
+A content delivery network or content distribution network (CDN) 
+is a geographically distributed network of proxy servers and their data centers. 
+The goal is to distribute service spatially relative to end-users 
+to provide high availability and high performance.
+
+The <hr> tag defines a thematic break in an HTML page (e.g. a shift of topic).
+
+In the Playing With Google Code Along, changing the logo on the google website using the src attribute. 
+However, this method no longer works. 
+Instead, use the srcset attribute to change the logo image.
+
+document.querySelectorAll()
+
+Correct: "rgb(255, 0, 0)"
+Incorrect: "rgb(255,0,0)"
+
+Your output will look different because chrome is showing you the jQuery object, 
+not the element that you selected. 
+In order to view the element you must access it 
+via $('div')[0];
+
+http://api.jquery.com/
+http://api.jquery.com/category/events/
+
+use the class name btn-large to style the bootstrap button is wrong. 
+The class name should actually be: btn-lg
+
+first need to run 
+sudo apt-get install -y mongodb-org 
+from your terminal in c9
+
+Instead of using foundUser.posts.push(post) 
+	you will use foundUser.posts.push(post._id)
+These changes are for MongoDB 3.6.1 and Mongoose 5.0.0-rc2
+mongo --version
+
+
