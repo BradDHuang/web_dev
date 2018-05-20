@@ -70,8 +70,7 @@ button {
 	letter-spacing: 1px;
 	font-size: inherit;
 	outline: none;
-	transition: all 0.5s;
-	/*it takes 0.5 seconds to fade out/in*/
+	transition: all 0.5s; /*it takes 0.5 seconds to fade out/in*/
 	/*below is for web-friendly*/
 	-webkit-transition: all 0.5s;
 	-moz-transition: all 0.5s;
