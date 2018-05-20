@@ -18,6 +18,20 @@ var pickedColor = pickColor();
 var displayColor = document.querySelector("#displayColor");
 var displayMsg = document.querySelector("#message");
 var h1 = document.querySelector("h1");
+var resetBtn = document.querySelector("#reset");
+
+resetBtn.addEventListener("click", function() {
+	// alert("clicked a btn!");
+	colors = getRandomColors(6);
+	pickedColor = pickColor();
+	
+	displayColor.textContent = pickedColor;
+	for (var i = 0; i < squares.length; i++) {
+		squares[i].style.backgroundColor = colors[i];
+	}
+	
+	h1.style.backgroundColor = "#000000";
+});
 
 displayColor.textContent = pickedColor;
 
@@ -37,6 +51,7 @@ for (var i = 0; i < squares.length; i++) {
 			// alert("Right!!!");
 			changeColors(pickedColor);
 			displayMsg.textContent = "You're right!";
+			resetBtn.textContent = "Play Again?";
 		
 			h1.style.backgroundColor = pickedColor;
 		} else {
