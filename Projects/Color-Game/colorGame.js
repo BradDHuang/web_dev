@@ -8,7 +8,9 @@
 // 	"rgb(0, 0, 255)",
 // 	"rgb(255, 0, 255)"
 // ];
-var colors = getRandomColors(6);
+var numOfColors = 6;
+// var colors = getRandomColors(6);
+var colors = getRandomColors(numOfColors);
 
 var squares = document.querySelectorAll(".square");
 // var pickedColor = colors[3];
@@ -19,10 +21,45 @@ var displayColor = document.querySelector("#displayColor");
 var displayMsg = document.querySelector("#message");
 var h1 = document.querySelector("h1");
 var resetBtn = document.querySelector("#reset");
+var easyBtn = document.querySelector("#easy");
+var hardBtn = document.querySelector("#hard");
+
+easyBtn.addEventListener("click", function() {
+	// alert("clicked a btn!");
+	easyBtn.classList.add("selected");
+	hardBtn.classList.remove("selected");
+	numOfColors = 3;
+	colors = getRandomColors(numOfColors);
+	pickedColor = pickColor();
+	
+	displayColor.textContent = pickedColor;
+	for (var i = 0; i < squares.length; i++) {
+		if (i < 3) {
+			squares[i].style.backgroundColor = colors[i];
+		} else {
+			squares[i].style.display = "none"; // hide the bottom 3 squares!
+		}
+	}
+	
+	// h1.style.backgroundColor = "#000000";
+});
+hardBtn.addEventListener("click", function() {
+	// alert("clicked a btn!");
+	hardBtn.classList.add("selected");
+	easyBtn.classList.remove("selected");
+	numOfColors = 6;
+	colors = getRandomColors(numOfColors);
+	pickedColor = pickColor();
+	displayColor.textContent = pickedColor;
+	for (var i = 0; i < squares.length; i++) {
+		squares[i].style.display = "block"; // unhide.
+		squares[i].style.backgroundColor = colors[i];
+	}
+});
 
 resetBtn.addEventListener("click", function() {
 	// alert("clicked a btn!");
-	colors = getRandomColors(6);
+	colors = getRandomColors(numOfColors);
 	pickedColor = pickColor();
 	
 	displayColor.textContent = pickedColor;
@@ -74,7 +111,8 @@ function changeColors(color) {
 function pickColor() {
 	// var num = Math.floor(Math.random(6)); // wrong syntax!
 	// var num = Math.floor(Math.random() * 6); 
-	var num = Math.floor(Math.random() * squares.length); 
+	// var num = Math.floor(Math.random() * squares.length); 
+	var num = Math.floor(Math.random() * colors.length); // there will be only 3 colors but still 6 squares on easy mode.
 	return colors[num];
 }
 
