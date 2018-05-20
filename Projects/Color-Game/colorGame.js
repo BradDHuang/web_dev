@@ -10,8 +10,12 @@ var colors = [
 ];
 
 var squares = document.querySelectorAll(".square");
-var pickedColor = colors[3];
+// var pickedColor = colors[3];
+// var num = Math.floor(Math.random(6)); // wrong syntax!
+// var pickedColor = colors[num];
+var pickedColor = pickColor();
 var displayColor = document.querySelector("#displayColor");
+var displayMsg = document.querySelector("#message");
 
 displayColor.textContent = pickedColor;
 
@@ -28,9 +32,29 @@ for (var i = 0; i < squares.length; i++) {
 		var clickedColor = this.style.backgroundColor;
 		
 		if (clickedColor === pickedColor) {
-			alert("Right!!!");
+			// alert("Right!!!");
+			changeColors(pickedColor);
+			displayMsg.textContent = "You're right!";
 		} else {
-			alert("Try again!");
+			// alert("Try again!");
+			// fade out
+			this.style.backgroundColor = "#000000";
+			displayMsg.textContent = "Try again!";
 		}
 	});
+}
+
+function changeColors(color) {
+	// change all squares and h1 colors when "right"
+
+	for (var i = 0; i < squares.length; i++) {
+		squares[i].style.backgroundColor = color;
+	}
+}
+
+function pickColor() {
+	// var num = Math.floor(Math.random(6)); // wrong syntax!
+	// var num = Math.floor(Math.random() * 6); 
+	var num = Math.floor(Math.random() * squares.length); 
+	return colors[num];
 }
