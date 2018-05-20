@@ -21,9 +21,46 @@ var displayColor = document.querySelector("#displayColor");
 var displayMsg = document.querySelector("#message");
 var h1 = document.querySelector("h1");
 var resetBtn = document.querySelector("#reset");
-var easyBtn = document.querySelector("#easy");
-var hardBtn = document.querySelector("#hard");
+// var easyBtn = document.querySelector("#easy");
+// var hardBtn = document.querySelector("#hard");
+var modes = document.querySelectorAll(".mode");
 
+for (var i = 0; i < modes.length; i++) {
+	modes[i].addEventListener("click", function() {
+		modes[0].classList.remove("selected");
+		modes[1].classList.remove("selected");
+		this.classList.add("selected");
+		
+		this.textContent === "Easy" ? numOfColors = 3 : numOfColors = 6;
+		reset();
+	});
+}
+
+function reset() {
+	
+	colors = getRandomColors(numOfColors);
+	pickedColor = pickColor();
+	
+	displayColor.textContent = pickedColor;
+	for (var i = 0; i < squares.length; i++) {
+		// squares[i].style.backgroundColor = colors[i];
+		
+		if (colors[i]) { // if (undefined), has an initial value of false.
+		
+			squares[i].style.display = "block"; // unhide the bottom 3 squares on Hard mode!
+			squares[i].style.backgroundColor = colors[i];
+		} else {
+			squares[i].style.display = "none"; // hide the bottom 3 squares on Easy mode!
+		}
+	}
+	
+	h1.style.backgroundColor = "steelblue";
+	
+	displayMsg.textContent = "";
+	resetBtn.textContent = "New Colors";
+}
+
+/*
 easyBtn.addEventListener("click", function() {
 	// alert("clicked a btn!");
 	easyBtn.classList.add("selected");
@@ -56,18 +93,10 @@ hardBtn.addEventListener("click", function() {
 		squares[i].style.backgroundColor = colors[i];
 	}
 });
-
+*/
 resetBtn.addEventListener("click", function() {
 	// alert("clicked a btn!");
-	colors = getRandomColors(numOfColors);
-	pickedColor = pickColor();
-	
-	displayColor.textContent = pickedColor;
-	for (var i = 0; i < squares.length; i++) {
-		squares[i].style.backgroundColor = colors[i];
-	}
-	
-	h1.style.backgroundColor = "steelblue";
+	reset();
 });
 
 displayColor.textContent = pickedColor;
