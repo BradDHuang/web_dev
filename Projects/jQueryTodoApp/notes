@@ -5,3 +5,10 @@ rel:
 defines the relationship 
 that the linked resource has to the document from which it's referenced.
 
+Difference:
+click(), ONLY adds listeners for existing elements;
+on(), will add listeners for ALL potential future elements.
+e.g. 
+// $("li").click(function() {
+// $("ul").on("click", "li", function() {
+

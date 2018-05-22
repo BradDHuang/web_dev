@@ -1,6 +1,9 @@
 // alert("connected");
 
-$("li").click(function() {
+// $("li").click(function() {
+    
+$("ul").on("click", "li", function() {    
+    
     // alert("clicked li");
     // if ($(this).css("color") === "gray") { // It is a rgb value!
     /*
@@ -25,7 +28,8 @@ $("li").click(function() {
     $(this).toggleClass("completed");
 });
 
-$("span").click(function(event) {
+// $("span").click(function(event) {
+$("ul").on("click", "span", function(event) {
     // alert("clicked a span");
     // $(this).remove();
     // $(this).parent().remove();
@@ -36,4 +40,24 @@ $("span").click(function(event) {
     });
     
     event.stopPropagation(); // this method is used for stopping the event Bubbling!
+});
+
+// $("input").keypress(function() {
+$("input[type='text']").keypress(function(event) {
+    // console.log(event);
+    if (event.which === 13) { // keyCode/which of "Enter" is 13.
+    // "which" is supported by more browsers.
+        // console.log("Enter key was pressed.");
+        // console.log($(this).val()); // this: the input text.
+        // get the input text:
+        var todoText = $(this).val();
+        // create a New <li> with the todoText and add it to the <ul>:
+        // $("ul").append("<li>a New li appended</li>");
+        // $("ul").append("<li>" + todoText + "</li>");
+        
+        // now we need to empty the input text.
+        $(this).val("");
+        // adding the <span>.
+        $("ul").append("<li><span>X</span> " + todoText + "</li>");
+    }
 });
