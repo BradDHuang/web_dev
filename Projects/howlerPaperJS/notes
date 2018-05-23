@@ -1,0 +1,13 @@
+
+// notes.
+
+https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API
+
+Paper.js: 
+an open source vector graphics scripting framework that runs on top of the HTML5 Canvas. 
+It offers a clean Scene Graph / Document Object Model and a lot of powerful functionality 
+to create and work with vector graphics and bezier curves(贝塞尔曲线), 
+all neatly wrapped up in a well designed, consistent and clean programming interface.
+
+http://paperjs.org/tutorials/getting-started/working-with-paper-js/
+
