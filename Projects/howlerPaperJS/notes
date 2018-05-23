@@ -13,3 +13,11 @@ http://paperjs.org/tutorials/getting-started/working-with-paper-js/
 
 http://paperjs.org/tutorials/interaction/keyboard-interaction/
 
+https://cdnjs.cloudflare.com/ajax/libs/howler/2.0.12/howler.js
+
+Howler.js has updated their syntax:
+var sound = new Howl({
+  src: ['sound.mp3']
+});
+sound.play();
+
