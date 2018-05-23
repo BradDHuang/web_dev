@@ -243,10 +243,21 @@
     	fillColor: 'red'
     }); */
     function onFrame(event) {
+        
         for (var i = 0; i < circles.length; i++) {
             // console.log(circles[i]);
             circles[i].fillColor.hue += 1;
             circles[i].scale(0.9);
+            
+            // Refactor
+            // console.log(circles[i].area);
+            if (circles[i].area < 1) {
+                circles[i].remove(); // remove the circle from the canvas
+                // Remove 1 ele. from index i:
+                circles.splice(i, 1); // remove the circle from the array
+                i--; // decrement i so that the loop doesn't skip a circle because of .splice()
+                // console.log(circles);
+            }
         }
     	// Each frame, change the fill color of the animatedCircle slightly by
     	// adding 1 to its hue:
