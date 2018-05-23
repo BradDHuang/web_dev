@@ -32,7 +32,7 @@
         }
     }
     */
-    
+    var circles = [];
     function onKeyDown(event) {
 	// When a key is pressed, set the content of the text item:
     // 	text.content = 'The ' + event.key + ' key was pressed!';
@@ -44,7 +44,29 @@
         var randomPoint = Point.random();
         // console.log(randomPoint);
         var point = randomPoint * maxPoint; // e.g. (0.5, 0.5) * (300, 400) -> (150, 200)
-        new Path.Circle(point, 10).fillColor = 'yellow';
+        // new Path.Circle(point, 10).fillColor = 'yellow';
+        // circles.push(new Path.Circle(point, 10).fillColor = 'yellow'); // 'yellow' was pushed!
+        var newCircle = new Path.Circle(point, 500);
+        newCircle.fillColor = 'yellow';
+        circles.push(newCircle);
+    }
+    
+    /*
+    var animatedCircle = new Path.Circle({
+    	center: view.center,
+    	radius: 70,
+    	fillColor: 'red'
+    }); */
+    function onFrame(event) {
+        for (var i = 0; i < circles.length; i++) {
+            // console.log(circles[i]);
+            circles[i].fillColor.hue += 1;
+            circles[i].scale(0.9);
+        }
+    	// Each frame, change the fill color of the animatedCircle slightly by
+    	// adding 1 to its hue:
+    // 	animatedCircle.fillColor.hue += 1;
+    // 	animatedCircle.scale(0.9);
     }
 </script>
 </head>
