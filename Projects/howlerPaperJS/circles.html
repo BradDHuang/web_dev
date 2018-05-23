@@ -23,7 +23,7 @@
     var myCircle2 = new Path.Circle(new Point(50, 70), 20);
     myCircle2.fillColor = 'blue';
     */
-    
+    /*
     var myCircle3;
     for (var x = 0; x < 1000; x += 100) {
         for (var y = 0; y < 1000; y += 100) {
@@ -31,7 +31,21 @@
             myCircle3.fillColor = 'yellow';
         }
     }
+    */
     
+    function onKeyDown(event) {
+	// When a key is pressed, set the content of the text item:
+    // 	text.content = 'The ' + event.key + ' key was pressed!';
+        // new Path.Circle(new Point(100, 100), 10).fillColor = 'yellow';
+        // console.log(view.size.height);
+        // console.log(view.size.width);
+        var maxPoint = new Point(view.size.width, view.size.height);
+        // console.log(maxPoint);
+        var randomPoint = Point.random();
+        // console.log(randomPoint);
+        var point = randomPoint * maxPoint; // e.g. (0.5, 0.5) * (300, 400) -> (150, 200)
+        new Path.Circle(point, 10).fillColor = 'yellow';
+    }
 </script>
 </head>
 <body>
