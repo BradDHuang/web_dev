@@ -12,3 +12,20 @@ e.g.
 // $("li").click(function() {
 // $("ul").on("click", "li", function() {
 
+box-shadow: 
+described by X and Y offsets (relative to the element), blur and spread radii（radius的复数）, and color.
+
+line-height: 
+defines the amount of space above and below inline elements. 
+
+The 3-digit codes are shorthand, #123 is the same as #112233. 
+
+Without the CSS box-sizing Property
+By default, the width and height of an element is calculated like this:
+width + padding + border = actual width of an element
+height + padding + border = actual height of an element
+This means: When you set the width/height of an element, the element often appear bigger than you have set.
+*********
+If you set box-sizing: border-box; 
+on an element padding and border are included in the width and height.
+
