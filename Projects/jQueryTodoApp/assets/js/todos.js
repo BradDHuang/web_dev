@@ -58,6 +58,12 @@ $("input[type='text']").keypress(function(event) {
         // now we need to empty the input text.
         $(this).val("");
         // adding the <span>.
-        $("ul").append("<li><span>X</span> " + todoText + "</li>");
+        // $("ul").append("<li><span>X</span> " + todoText + "</li>");
+        // $("ul").append("<li><span><i class="fa fa-trash"></i></span> " + todoText + "</li>");
+        $("ul").append("<li><span><i class='fa fa-trash'></i></span> " + todoText + "</li>");
     }
+});
+
+$(".fa-plus-circle").click(function() {
+    $("input[type='text']").fadeToggle();
 });

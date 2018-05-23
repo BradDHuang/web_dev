@@ -29,3 +29,11 @@ This means: When you set the width/height of an element, the element often appea
 If you set box-sizing: border-box; 
 on an element padding and border are included in the width and height.
 
+https://uigradients.com/
+
+https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css
+
+Font Awesome 5 converts the <i> element into an SVG. 
+To work around this we have to wrap the <i> element in a span and select the span in our JS with an id. 
+This also means we have to style the todo list trash can spans with li span in our CSS, instead of just using span.
+
