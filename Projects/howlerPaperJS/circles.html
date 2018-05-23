@@ -7,7 +7,7 @@
 <script type="text/javascript" src="paper-full.js"></script>
 <!-- Define inlined PaperScript associate it with myCanvas -->
 <script type="text/paperscript" canvas="myCanvas">
-	// Create a Paper.js Path to draw a line into it:
+	/*// Create a Paper.js Path to draw a line into it:
 	var path = new Path();
 	// Give the stroke a color
 	path.strokeColor = 'green';
@@ -22,6 +22,16 @@
     myCircle.fillColor = 'red';
     var myCircle2 = new Path.Circle(new Point(50, 70), 20);
     myCircle2.fillColor = 'blue';
+    */
+    
+    var myCircle3;
+    for (var x = 0; x < 1000; x += 100) {
+        for (var y = 0; y < 1000; y += 100) {
+            myCircle3 = new Path.Circle(new Point(x, y), 10);
+            myCircle3.fillColor = 'yellow';
+        }
+    }
+    
 </script>
 </head>
 <body>
