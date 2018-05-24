@@ -1,0 +1,15 @@
+
+// notes
+
+http://www.omdbapi.com // The Open Movie Database
+
+General search: http://www.omdbapi.com/?s=guardians+of+the+galaxy&apikey=thewdb 
+Search with Movie ID: http://www.omdbapi.com/?i=tt3896198&apikey=thewdb 
+So everything is exactly the same as explains, except must append &apikey=thewdb to the end of the url.
+
+cd MovieAPI
+npm init
+npm i --save express ejs request
+node app.js
+
+
