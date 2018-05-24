@@ -2,6 +2,8 @@ var express = require("express");
 var app = express();
 var request = require("request");
 
+app.set("view engine", "ejs");
+
 // https://web-dev-happitt.c9users.io/results
 app.get("/results", function(req, res) {
     // res.send("It works!");
