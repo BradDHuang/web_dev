@@ -16,13 +16,13 @@ app.get("/results", function(req, res) {
     
     // console.log(req.query.search); // e.g. .../results?search=iron
     var queryItem = req.query.search;
-    var url = "http://www.omdbapi.com/?s=" + queryItem + "&apikey=thewdb";
+    var url = "http://www.omdbapi.com/?s=" + queryItem + "&apikey=thewdb"; // Dynamic url.
     request(url, function(error, response, body) {
         
         if (!error && response.statusCode == 200) {
             // res.send(body); 
             // body is a String!
-            var data = JSON.parse(body);
+            var data = JSON.parse(body); // Return value: an Object.
             // res.send(results["Search"][0]["Title"]);
             // res.render("results.ejs");
             // res.render("results"); // results.ejs

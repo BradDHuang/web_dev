@@ -19,4 +19,6 @@ generate HTML markup with plain JavaScript.
 No religiousness about how to organize things. 
 No reinvention of iteration and control-flow. It's just plain JavaScript.
 
-
+<% 'Scriptlet' tag, for control-flow, no output
+<%= Outputs the value into the template (HTML escaped)
+%> Plain ending tag
